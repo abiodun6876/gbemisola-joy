@@ -48,7 +48,7 @@ const App: React.FC = () => {
           <a href="#registry" className="hover:text-sage transition-colors">Registry</a>
           <a href="#rsvp" className="hover:text-sage transition-colors">RSVP</a>
         </div>
-        <button className="md:hidden mix-blend-difference text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className={`md:hidden transition-colors ${isMenuOpen ? 'text-neutral-800' : 'mix-blend-difference text-white'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X /> : <Menu />}
         </button>
       </nav>
