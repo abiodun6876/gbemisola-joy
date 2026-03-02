@@ -52,7 +52,7 @@ const App: React.FC = () => {
   const dashWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="bg-ivory text-neutral-900 font-sans selection:bg-sage selection:text-white">
+    <div className="bg-white text-neutral-900 font-sans selection:bg-forest selection:text-white">
 
       {/* Progress Line */}
       <motion.div
@@ -67,10 +67,10 @@ const App: React.FC = () => {
           <div className="font-serif text-2xl font-light tracking-tighter mix-blend-difference text-white">G&J</div>
         </div>
         <div className="hidden md:flex gap-12 font-serif text-sm uppercase tracking-widest mix-blend-difference text-white">
-          <a href="#events" className="hover:text-sage transition-colors">Events</a>
-          <a href="#gallery" className="hover:text-sage transition-colors">Gallery</a>
-          <a href="#registry" className="hover:text-sage transition-colors opacity-80">Registry</a>
-          <a href="#rsvp" className="hover:text-sage transition-colors">RSVP</a>
+          <a href="#events" className="hover:text-forest transition-colors">Events</a>
+          <a href="#gallery" className="hover:text-forest transition-colors">Gallery</a>
+          <a href="#registry" className="hover:text-forest transition-colors opacity-80">Registry</a>
+          <a href="#rsvp" className="hover:text-forest transition-colors">RSVP</a>
         </div>
         <button className={`md:hidden transition-colors ${isMenuOpen ? 'text-neutral-800' : 'mix-blend-difference text-white'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X /> : <Menu />}
@@ -124,7 +124,7 @@ const App: React.FC = () => {
         <div className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-12 text-center max-w-3xl mx-auto">
             <FadeIn>
-              <Heart className="mx-auto text-sage mb-8 w-12 h-12 stroke-[1px]" />
+              <Heart className="mx-auto text-forest mb-8 w-12 h-12 stroke-[1px]" />
               <p className="font-serif text-2xl md:text-4xl text-neutral-800 leading-relaxed italic mb-12">
                 "Two souls but a single thought, two hearts that beat as one."
               </p>
@@ -175,7 +175,7 @@ const App: React.FC = () => {
                   <img src="/img/coupleimage4.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4 text-sage uppercase font-bold text-xs tracking-widest">
+                  <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
                     <span>Traditional Wedding</span>
                     <div className="h-px flex-1 bg-neutral-100" />
                   </div>
@@ -205,7 +205,7 @@ const App: React.FC = () => {
                   <img src="/img/coupleimage6.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4 text-sage uppercase font-bold text-xs tracking-widest">
+                  <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
                     <span>The Holy Matrimony</span>
                     <div className="h-px flex-1 bg-neutral-100" />
                   </div>
@@ -229,8 +229,8 @@ const App: React.FC = () => {
             </FadeIn>
           </div>
 
-          <div className="mt-20 text-center max-w-2xl mx-auto border border-neutral-100 p-12 rounded-3xl bg-ivory/50">
-            <Heart className="mx-auto text-sage/30 mb-6" />
+          <div className="mt-20 text-center max-w-2xl mx-auto border border-neutral-100 p-12 rounded-3xl bg-white/50">
+            <Heart className="mx-auto text-forest/30 mb-6" />
             <h4 className="font-serif text-2xl mb-4">The Reception</h4>
             <p className="text-neutral-500 italic mb-2">To follow immediately after the Church Wedding</p>
             <p className="font-serif font-bold text-xl uppercase tracking-widest text-neutral-800">Sunbet Event Centre, Akure</p>
@@ -283,10 +283,10 @@ const App: React.FC = () => {
               <p className="font-serif text-xl tracking-[0.2em] uppercase text-neutral-400">Dusty Peach</p>
             </div>
             <div className="flex flex-col items-center gap-8">
-              <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-sage shadow-2xl overflow-hidden group">
+              <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-forest shadow-2xl overflow-hidden group">
                 <div className="w-full h-full bg-white/10 group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <p className="font-serif text-xl tracking-[0.2em] uppercase text-neutral-400">Sage Green</p>
+              <p className="font-serif text-xl tracking-[0.2em] uppercase text-neutral-400">Forest Green</p>
             </div>
           </div>
 
@@ -297,7 +297,7 @@ const App: React.FC = () => {
                   <img src="/img/galeandfila.jpeg" alt="Gele and Fila" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="p-12 md:p-20 flex flex-col justify-center relative">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-peach via-white to-sage" />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-peach via-white to-forest" />
                   <Camera size={40} className="text-white/20 mb-8" />
                   <h3 className="font-serif text-4xl md:text-6xl mb-8 leading-tight">Gele & Fila</h3>
                   <p className="text-neutral-400 mb-12 text-lg uppercase tracking-widest leading-loose">
@@ -305,12 +305,12 @@ const App: React.FC = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-8 max-w-md">
                     <div className="border border-white/10 p-6 rounded-2xl">
-                      <p className="font-serif italic text-sage mb-2">Premium Gele</p>
+                      <p className="font-serif italic text-forest mb-2">Premium Gele</p>
                       <p className="text-3xl font-bold">₦10,000</p>
                       <p className="text-[10px] opacity-40 uppercase tracking-tighter mt-1">Inc. Sewing</p>
                     </div>
                     <div className="border border-white/10 p-6 rounded-2xl">
-                      <p className="font-serif italic text-sage mb-2">Classic Fila</p>
+                      <p className="font-serif italic text-forest mb-2">Classic Fila</p>
                       <p className="text-3xl font-bold">₦5,000</p>
                       <p className="text-[10px] opacity-40 uppercase tracking-tighter mt-1">Inc. Sewing</p>
                     </div>
@@ -323,24 +323,62 @@ const App: React.FC = () => {
       </section>
 
       {/* Gifting */}
-      <section id="registry" className="section-padding bg-ivory/50 border-t border-neutral-100">
+      <section id="registry" className="section-padding bg-white border-t border-neutral-100">
         <div className="container mx-auto">
           <SectionHeader title="Wedding Gift" subtitle="Registry" />
-          <div className="max-w-4xl mx-auto text-center mb-20 text-neutral-600 leading-loose text-lg font-light italic">
+          <div className="max-w-4xl mx-auto text-center mb-12 text-neutral-600 leading-loose text-lg font-light italic">
             Our registry is but a humble request, for your presence is our true treasure. Should you wish to bless us with a token, we have provided the details below.
           </div>
+
+          <FadeIn className="text-center mb-20">
+            <a
+              href="https://www.myregistry.com/wedding-registry/gbemisola-seli-and-joy-felix-hamilton-on/5247697"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-forest text-white px-10 py-5 rounded-full font-serif text-lg hover:bg-neutral-900 transition-all duration-300 shadow-xl"
+            >
+              <Gift size={20} />
+              View Official Gift Registry
+            </a>
+          </FadeIn>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <FadeIn delay={0.2}>
               <div className="p-12 md:p-16 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700">
-                <Gift className="text-sage mb-8" size={32} />
-                <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">General Contributions</h4>
+                <Gift className="text-forest mb-8" size={32} />
+                <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">Aso-Ebi & Contributions</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Account Number</p>
+                    <p className="font-serif text-5xl tracking-tighter text-neutral-800 flex items-center gap-4">
+                      0730277350
+                      <ChevronRight className="text-forest/30" />
+                    </p>
+                  </div>
+                  <div className="pt-8 flex justify-between items-end border-t border-neutral-50">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Banker</p>
+                      <p className="font-serif text-xl">Access Bank</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Receiver</p>
+                      <p className="font-serif text-xl font-bold">Adefemisoye Moradeke Adebosede</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.4}>
+              <div className="p-12 md:p-16 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700">
+                <Heart className="text-forest mb-8" size={32} />
+                <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">Wedding Registry Account</h4>
                 <div className="space-y-4">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Account Number</p>
                     <p className="font-serif text-5xl tracking-tighter text-neutral-800 flex items-center gap-4">
                       2308080414
-                      <ChevronRight className="text-sage/30" />
+                      <ChevronRight className="text-forest/30" />
                     </p>
                   </div>
                   <div className="pt-8 flex justify-between items-end border-t border-neutral-50">
@@ -352,23 +390,6 @@ const App: React.FC = () => {
                       <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Receiver</p>
                       <p className="font-serif text-xl font-bold">Gbemisola Blessing Seli</p>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.4}>
-              <div className="p-12 md:p-16 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700">
-                <Heart className="text-sage mb-8" size={32} />
-                <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">Support & Interac</h4>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Email Address</p>
-                    <p className="font-serif text-3xl md:text-4xl tracking-tighter text-neutral-800 break-all">selib7979@gmail.com</p>
-                  </div>
-                  <div className="pt-8 space-y-4 border-t border-neutral-50 text-neutral-600 text-sm">
-                    <p className="flex justify-between"><span>Access Bank:</span> <span className="font-bold">0730277350</span></p>
-                    <p className="flex justify-between"><span>Legal Name:</span> <span className="font-bold">Adefemisoye Moradeke A.</span></p>
                   </div>
                 </div>
               </div>
