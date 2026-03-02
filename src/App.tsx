@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import { MapPin, Calendar, Heart, Gift, Camera, ChevronRight, Menu, X, Instagram } from 'lucide-react';
 import './index.css';
 
@@ -29,23 +29,47 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }
 );
 
 const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentHero, setCurrentHero] = useState(0);
   const { scrollYProgress } = useScroll();
+
+  const heroImages = [
+    "/img/couplesimage2.jpeg",
+    "/img/couplesimage1.jpg",
+    "/img/couplesimage3.jpeg",
+    "/img/coupleimage6.jpg"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const heroScale = useTransform(scrollYProgress, [0, 0.4], [1.1, 1]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.2]);
+  const dashWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <div className="bg-ivory text-neutral-900 font-sans selection:bg-sage selection:text-white">
+
+      {/* Progress Line */}
+      <motion.div
+        style={{ width: dashWidth }}
+        className="fixed top-0 left-0 h-1 bg-sage z-[60] origin-left"
+      />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-6 transition-all duration-300">
         <div className="flex items-center gap-3">
           <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain mix-blend-difference" />
+          <div className="font-serif text-2xl font-light tracking-tighter mix-blend-difference text-white">G&J</div>
         </div>
         <div className="hidden md:flex gap-12 font-serif text-sm uppercase tracking-widest mix-blend-difference text-white">
           <a href="#events" className="hover:text-sage transition-colors">Events</a>
           <a href="#gallery" className="hover:text-sage transition-colors">Gallery</a>
-          <a href="#registry" className="hover:text-sage transition-colors">Registry</a>
+          <a href="#registry" className="hover:text-sage transition-colors opacity-80">Registry</a>
           <a href="#rsvp" className="hover:text-sage transition-colors">RSVP</a>
         </div>
         <button className={`md:hidden transition-colors ${isMenuOpen ? 'text-neutral-800' : 'mix-blend-difference text-white'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -67,10 +91,20 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative h-[100svh] flex items-center justify-center p-0 overflow-hidden">
-        <motion.div style={{ scale: heroScale, opacity: heroOpacity }} className="absolute inset-0">
-          <img src="/img/couplesimage2.jpeg" className="w-full h-full object-cover grayscale-[10%]" alt="Hero" />
-          <div className="absolute inset-0 bg-neutral-950/40" />
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentHero}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            style={{ scale: heroScale, opacity: heroOpacity }}
+            className="absolute inset-0"
+          >
+            <img src={heroImages[currentHero]} className="w-full h-full object-cover grayscale-[10%]" alt="Hero" />
+            <div className="absolute inset-0 bg-neutral-950/40" />
+          </motion.div>
+        </AnimatePresence>
 
         <div className="relative z-10 text-center text-white px-6">
           <FadeIn y={40}>
@@ -78,7 +112,7 @@ const App: React.FC = () => {
             <h1 className="font-script text-8xl md:text-[14rem] leading-none mb-4 drop-shadow-2xl">Gbemisola & Joy</h1>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 mt-12 font-serif text-lg md:text-2xl italic font-light tracking-widest uppercase animate-fade-up">
               <span>April 30</span>
-              <Heart className="text-white invisible md:visible" size={16} />
+              <Heart className="text-white invisible md:visible animate-pulse" size={16} />
               <span>May 2, 2026</span>
             </div>
           </FadeIn>
