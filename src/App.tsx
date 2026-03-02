@@ -411,7 +411,7 @@ const App: React.FC = () => {
               <p className="font-serif uppercase tracking-widest text-xs opacity-40 mb-4">RSVP / Contact</p>
               <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em] mb-6">+234 906 561 8702</p>
               <a
-                href="https://wa.me/2349065618702?text=hi,%20i%20want%20to%20buy%20aso%20ebi%20..."
+                href="https://wa.me/2349065618702?text=Hello!%20I'm%20interested%20in%20purchasing%20the%20Aso-Ebi%20for%20Gbemisola%20%26%20Joy's%20wedding.%20Could%20you%20please%20provide%20me%20with%20more%20details?%20Thank%20you!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-forest text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-forest transition-all"
@@ -423,7 +423,7 @@ const App: React.FC = () => {
               <p className="font-serif uppercase tracking-widest text-xs opacity-40 mb-4">Support Line</p>
               <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em] mb-6">+234 813 681 6240</p>
               <a
-                href="https://wa.me/2348136816240?text=hi,%20i%20want%20to%20buy%20aso%20ebi%20..."
+                href="https://wa.me/2348136816240?text=Hello!%20I%20have%20a%20question%20regarding%20Gbemisola%20%26%20Joy's%20wedding.%20I%20would%20appreciate%20your%20assistance.%20Thank%20you!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-forest text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-forest transition-all"
