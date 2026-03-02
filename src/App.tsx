@@ -280,7 +280,7 @@ const App: React.FC = () => {
               <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-peach shadow-2xl overflow-hidden group">
                 <div className="w-full h-full bg-white/10 group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <p className="font-serif text-xl tracking-[0.2em] uppercase text-neutral-400">Dusty Peach</p>
+              <p className="font-serif text-xl tracking-[0.2em] uppercase text-neutral-400">Peach</p>
             </div>
             <div className="flex flex-col items-center gap-8">
               <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-forest shadow-2xl overflow-hidden group">
@@ -406,14 +406,30 @@ const App: React.FC = () => {
             <p className="font-serif tracking-[0.5em] text-xs md:text-sm uppercase opacity-40">Witness Our Beginning 2026</p>
           </div>
 
-          <div className="max-w-2xl mx-auto flex flex-col md:flex-row justify-center gap-12 md:gap-24 mb-24 border-t border-b border-white/5 py-12">
-            <div>
+          <div className="max-w-4xl mx-auto flex flex-col md:grid md:grid-cols-2 justify-center gap-12 md:gap-24 mb-24 border-t border-b border-white/5 py-12">
+            <div className="flex flex-col items-center">
               <p className="font-serif uppercase tracking-widest text-xs opacity-40 mb-4">RSVP / Contact</p>
-              <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em]">+234 906 561 8702</p>
+              <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em] mb-6">+234 906 561 8702</p>
+              <a
+                href="https://wa.me/2349065618702?text=hi,%20i%20want%20to%20buy%20aso%20ebi%20..."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-forest text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-forest transition-all"
+              >
+                Message on WhatsApp
+              </a>
             </div>
-            <div>
+            <div className="flex flex-col items-center border-t border-white/5 md:border-t-0 pt-12 md:pt-0">
               <p className="font-serif uppercase tracking-widest text-xs opacity-40 mb-4">Support Line</p>
-              <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em]">+234 813 681 6240</p>
+              <p className="font-serif text-xl md:text-2xl font-light tracking-[0.2em] mb-6">+234 813 681 6240</p>
+              <a
+                href="https://wa.me/2348136816240?text=hi,%20i%20want%20to%20buy%20aso%20ebi%20..."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-forest text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-forest transition-all"
+              >
+                Message on WhatsApp
+              </a>
             </div>
           </div>
 
