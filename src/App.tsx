@@ -203,7 +203,7 @@ const App: React.FC = () => {
           initial={{ y: -50 }}
           whileInView={{ y: 50 }}
           transition={{ duration: 2 }}
-          src="/img/couplesimage3.jpeg"
+          src="img/couplesimage2.jpeg"
           className="w-full h-[150%] object-cover object-top"
           style={{ objectPosition: 'center 20%' }}
         />
@@ -222,7 +222,7 @@ const App: React.FC = () => {
             <FadeIn delay={0.2} y={30}>
               <div className="group relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-8">
-                  <img src="/img/couplesimage2.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
+                  <img src="/img/couplesimage3.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
@@ -252,7 +252,7 @@ const App: React.FC = () => {
             <FadeIn delay={0.4} y={30}>
               <div className="group relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-8">
-                  <img src="/img/image.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
+                  <img src="/img/image2.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
