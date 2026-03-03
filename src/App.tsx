@@ -34,10 +34,11 @@ const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   const heroImages = [
-    "/img/couplesimage2.jpeg",
-    "/img/couplesimage1.jpg",
-    "/img/couplesimage3.jpeg",
-    "/img/coupleimage6.jpg"
+    { src: "/img/image2.jpeg", position: "center 20%" },
+    { src: "/img/image1.jpeg", position: "center" },
+    { src: "/img/image.jpeg", position: "center" },
+    { src: "/img/couplesimage3.jpeg", position: "center 30%" },
+    { src: "/img/couplesimage2.jpeg", position: "center 10%" }
   ];
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const App: React.FC = () => {
       setCurrentHero((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroImages.length]);
 
   const heroScale = useTransform(scrollYProgress, [0, 0.4], [1.1, 1]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.2]);
@@ -101,7 +102,12 @@ const App: React.FC = () => {
             style={{ scale: heroScale, opacity: heroOpacity }}
             className="absolute inset-0"
           >
-            <img src={heroImages[currentHero]} className="w-full h-full object-cover grayscale-[10%]" alt="Hero" />
+            <img
+              src={heroImages[currentHero].src}
+              className="w-full h-full object-cover grayscale-[10%]"
+              style={{ objectPosition: heroImages[currentHero].position }}
+              alt="Hero"
+            />
             <div className="absolute inset-0 bg-neutral-950/40" />
           </motion.div>
         </AnimatePresence>
@@ -115,12 +121,20 @@ const App: React.FC = () => {
               <Heart className="text-white invisible md:visible animate-pulse" size={16} />
               <span>May 2, 2026</span>
             </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5 }}
+              className="mt-8 font-serif text-xl md:text-2xl tracking-[0.3em] text-white/60"
+            >
+              #Gbemiwale'26
+            </motion.div>
           </FadeIn>
         </div>
       </section>
 
       {/* Invitation Text */}
-      <section className="section-padding max-w-5xl mx-auto">
+      <section className="section-padding max-w-5xl mx-auto overflow-hidden">
         <div className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-12 text-center max-w-3xl mx-auto">
             <FadeIn>
@@ -148,14 +162,50 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Our Marriage Story */}
+      <section id="story" className="section-padding bg-neutral-50 overflow-hidden">
+        <div className="container mx-auto max-w-4xl">
+          <SectionHeader title="Our Marriage Story" subtitle="How We Met" />
+
+          <FadeIn className="bg-white p-8 md:p-16 rounded-[3rem] shadow-sm border border-neutral-100">
+            <div className="space-y-8 font-serif text-lg md:text-xl text-neutral-700 leading-relaxed">
+              <p>
+                Life unfolds according to God’s divine purpose, and we often come to realize that our steps are ordered by the Lord. What may appear as changes or delays are sometimes God’s way of aligning destinies.
+              </p>
+              <p>
+                Joy left his home country with many expectations, trusting God for direction. God quietly ordered and reordered his steps, sometimes in opposite directions to Joy's intentions. He was first meant to settle in Hamilton through a classmate from Ife (OAU), the city where I resided. Even when circumstances took him elsewhere, God, in His wisdom, brought him back.
+              </p>
+              <p>
+                Our meeting came through a schoolmate, originally to assist Joy in settling and securing employment. From that simple beginning, friendship grew, understanding deepened, and by God’s grace, love blossomed.
+              </p>
+              <p>
+                When Joy asked me to walk this life’s journey with him, I joyfully said yes. Though eager to begin, we chose to grow patiently, trusting God to refine us and unite us in His perfect time.
+              </p>
+
+              <div className="pt-12 border-t border-neutral-100 flex flex-col gap-6">
+                <div className="text-center italic text-forest">
+                  <p className="text-2xl mb-2">“A man’s heart plans his way, but the Lord directs his steps.”</p>
+                  <p className="text-sm uppercase tracking-widest opacity-60">— Proverbs 16:9</p>
+                </div>
+                <div className="text-center italic text-forest">
+                  <p className="text-2xl mb-2">“He has made everything beautiful in its time.”</p>
+                  <p className="text-sm uppercase tracking-widest opacity-60">— Ecclesiastes 3:11</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Parallax Break */}
-      <div className="h-[60vh] md:h-[80vh] overflow-hidden relative">
+      <div className="h-[60vh] md:h-[80vh] overflow-hidden relative w-full">
         <motion.img
           initial={{ y: -50 }}
           whileInView={{ y: 50 }}
           transition={{ duration: 2 }}
-          src="/img/couplesimage1.jpg"
+          src="/img/couplesimage3.jpeg"
           className="w-full h-[150%] object-cover object-top"
+          style={{ objectPosition: 'center 20%' }}
         />
         <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
           <h2 className="font-script text-white text-5xl md:text-[10rem] drop-shadow-xl leading-tight">True Love Stories Never End</h2>
@@ -172,7 +222,7 @@ const App: React.FC = () => {
             <FadeIn delay={0.2} y={30}>
               <div className="group relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-8">
-                  <img src="/img/coupleimage4.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                  <img src="/img/couplesimage2.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
@@ -202,7 +252,7 @@ const App: React.FC = () => {
             <FadeIn delay={0.4} y={30}>
               <div className="group relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-8">
-                  <img src="/img/coupleimage6.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                  <img src="/img/image.jpeg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" style={{ objectPosition: 'center 10%' }} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 text-forest uppercase font-bold text-xs tracking-widest">
@@ -246,11 +296,11 @@ const App: React.FC = () => {
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {[
               { src: "/img/gbemiimage1.jpeg", alt: "Gbemisola" },
-              { src: "/img/couplesimage3.jpeg", alt: "The Couple" },
-              { src: "/img/coupleimage5.jpg", alt: "Joyful Moment" },
-              { src: "/img/couplesimage1.jpg", alt: "The Love" },
-              { src: "/img/couplesimage2.jpeg", alt: "Focus" },
-              { src: "/img/coupleimage6.jpg", alt: "Engagement" }
+              { src: "/img/image1.jpeg", alt: "The Couple" },
+              { src: "/img/image2.jpeg", alt: "Joyful Moment" },
+              { src: "/img/couplesimage3.jpeg", alt: "The Love" },
+              { src: "/img/image.jpeg", alt: "Focus" },
+              { src: "/img/couplesimage2.jpeg", alt: "Engagement" }
             ].map((img, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
                 <div className="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-700">
