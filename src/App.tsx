@@ -297,7 +297,6 @@ const App: React.FC = () => {
             {[
               { src: "/img/gbemiimage1.jpeg", alt: "Gbemisola" },
               { src: "/img/image1.jpeg", alt: "The Couple" },
-              { src: "/img/image2.jpeg", alt: "Joyful Moment" },
               { src: "/img/couplesimage3.jpeg", alt: "The Love" },
               { src: "/img/image.jpeg", alt: "Focus" },
               { src: "/img/couplesimage2.jpeg", alt: "Engagement" }
