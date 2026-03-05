@@ -391,15 +391,15 @@ const App: React.FC = () => {
             </a>
           </FadeIn>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <FadeIn delay={0.2}>
-              <div className="p-12 md:p-16 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700">
+              <div className="p-10 md:p-12 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700 h-full flex flex-col">
                 <Gift className="text-forest mb-8" size={32} />
                 <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">Aso-Ebi & Contributions</h4>
-                <div className="space-y-4">
+                <div className="space-y-4 mt-auto">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Account Number</p>
-                    <p className="font-serif text-5xl tracking-tighter text-neutral-800 flex items-center gap-4">
+                    <p className="font-serif text-4xl tracking-tighter text-neutral-800 flex items-center gap-4">
                       0730277350
                       <ChevronRight className="text-forest/30" />
                     </p>
@@ -411,7 +411,7 @@ const App: React.FC = () => {
                     </div>
                     <div className="text-right">
                       <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Receiver</p>
-                      <p className="font-serif text-xl font-bold">Adefemisoye Moradeke Adebosede</p>
+                      <p className="font-serif text-xl font-bold text-right leading-tight">Adefemisoye Moradeke Adebosede</p>
                     </div>
                   </div>
                 </div>
@@ -419,13 +419,13 @@ const App: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <div className="p-12 md:p-16 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700">
+              <div className="p-10 md:p-12 rounded-[2.5rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all duration-700 h-full flex flex-col">
                 <Heart className="text-forest mb-8" size={32} />
                 <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-neutral-400 text-xs font-bold">Wedding Registry Account</h4>
-                <div className="space-y-4">
+                <div className="space-y-4 mt-auto">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Account Number</p>
-                    <p className="font-serif text-5xl tracking-tighter text-neutral-800 flex items-center gap-4">
+                    <p className="font-serif text-4xl tracking-tighter text-neutral-800 flex items-center gap-4">
                       2308080414
                       <ChevronRight className="text-forest/30" />
                     </p>
@@ -439,6 +439,27 @@ const App: React.FC = () => {
                       <p className="text-[10px] uppercase tracking-widest font-bold text-neutral-400 mb-2">Receiver</p>
                       <p className="font-serif text-xl font-bold">Gbemisola Blessing Seli</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.6}>
+              <div className="p-10 md:p-12 rounded-[2.5rem] bg-neutral-900 text-white shadow-xl hover:shadow-2xl transition-all duration-700 h-full flex flex-col relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-forest/20 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-forest/30 transition-colors duration-700" />
+                <Gift className="text-forest mb-8 relative z-10" size={32} />
+                <h4 className="font-serif text-2xl mb-8 uppercase tracking-widest text-white/40 text-xs font-bold relative z-10">International Gifts (Canada & Global)</h4>
+                <div className="space-y-6 mt-auto relative z-10">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-white/40 mb-2">Interac E-Transfer</p>
+                    <p className="font-serif text-2xl md:text-3xl tracking-tight text-white break-all leading-tight">
+                      selib7979@gmail.com
+                    </p>
+                  </div>
+                  <div className="pt-8 border-t border-white/10">
+                    <p className="font-serif italic text-forest text-lg">
+                      For our dear ones in Canada and beyond wishing to send their love and gifts.
+                    </p>
                   </div>
                 </div>
               </div>
